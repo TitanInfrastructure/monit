@@ -1,1 +1,1 @@
-default[:monit][:check_interval] = 121
+default[:monit][:check_interval] = 30
