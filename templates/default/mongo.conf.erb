@@ -1,5 +1,5 @@
 check process mongodb with pidfile <%= node[:monit][:mongo][:pidfile] %>
-  group databas
+  group database
   start program = "/etc/init.d/mongod start"
   stop program = "/etc/init.d/mongod stop"
   if failed host 127.0.0.1 port 27017 then restart
