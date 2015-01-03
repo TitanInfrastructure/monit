@@ -45,6 +45,21 @@ Check Nginx process.
 }
 ```
 
+#### monit::mongo
+
+Check mongo server process.
+
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[mongo::nginx]"
+  ]
+}
+```
+
+
 Contributing
 ------------
 1. Fork it (https://github.com/vigosan/monit)
