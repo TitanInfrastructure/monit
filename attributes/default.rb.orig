@@ -1,2 +1,7 @@
 default[:monit][:check_interval] = 30
+<<<<<<< HEAD
+
 default[:monit][:mongo][:pidfile] = '/var/lib/mongo/mongod.lock'
+
+=======
+>>>>>>> 206a0aefe5bbe6fc255b242c877cc1b3403e9858
