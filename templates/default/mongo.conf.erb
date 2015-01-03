@@ -1,4 +1,4 @@
-check process nginx with pidfile <%= node[:monit][:mongo][:pidfile] %>
+check process mongodb with pidfile <%= node[:monit][:mongo][:pidfile] %>
   group database
   start program = "service mongod start"
   stop program = "service mongod stop"
