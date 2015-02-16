@@ -30,7 +30,6 @@ Track load averages, memory usage and cpu usage and alert you when they move out
 }
 ```
 
-
 #### monit::nginx
 
 Check Nginx process.
@@ -54,7 +53,21 @@ Check mongo server process.
 {
   "name":"my_node",
   "run_list": [
-    "recipe[mongo::nginx]"
+    "recipe[monit::nginx]"
+  ]
+}
+```
+
+#### monit::mysql
+
+Check MySQL server process.
+
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[monit::mysql]"
   ]
 }
 ```
