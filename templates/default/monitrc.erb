@@ -52,6 +52,9 @@
 # set mailserver mail.bar.baz,               # primary mailserver
 #                backup.bar.baz port 10025,  # backup mailserver on port 10025
 #                localhost                   # fallback relay
+
+set mailserver <%= node[:monit][:mailserver] %>
+
 #
 #
 ## By default Monit will drop alert events if no mail servers are available.
@@ -99,14 +102,18 @@
 ## or sender using the MAIL-FORMAT statement. Macros such as $DATE, etc.
 ## are expanded at runtime. For example, to override the sender, use:
 #
-# set mail-format { from: monit@foo.bar }
+
+set mail-format { from: <%= node[:monit][:mail][:from] %> }
+
 #
 #
 ## You can set alert recipients whom will receive alerts if/when a
 ## service defined in this file has errors. Alerts may be restricted on
 ## events by using a filter as in the second example below.
 #
-# set alert sysadm@foo.bar                       # receive all alerts
+
+set alert <%= node[:monit][:mail][:to] %>      # receive all alerts
+
 ## Do not alert when Monit start,stop or perform a user initiated action
 # set alert manager@foo.bar not on { instance, action }
 #
